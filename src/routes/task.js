@@ -11,23 +11,22 @@ router.get('/tasks', (req, res, next) =>{
     });
 });
 
-//per id
+// les retorne per id
 router.get('/tasks/:id', (req, res, next) => {
     //esto me devuelve todas las tareas
-    db.tasks.findOne({_id: req.params.id}, (err, tasks) => {
-    if (err) return next(err); //lo manda a un manejador de errores de expres
-    res.json(tasks); //todo ok
-});
+    db.tasks.findOne({_id: mongojs.ObjectId(req.params.id)}, (err, task) => {
+        if (err) return next(err); //lo manda a un manejador de errores de expres
+        res.json(tasks); //todo ok
+    });
 
 });
 
 //metode de guardar
-router.post('/task', (req, res, next) => {
+router.post('/tasks', (req, res, next) => {
     const task = req.body; //dada a emmagatzemar, task es un objecte
     if(!task.title || !(task.isDone + '')){
         res.status(400).json({
             error: 'bad data'
-
         });
     }else{
         db.tasks.save(task, (err, task) => {
@@ -38,7 +37,7 @@ router.post('/task', (req, res, next) => {
 });
 
 //metode de eliminar
-router.delete('/task/:id', (req, res, next) => {
+router.delete('/tasks/:id', (req, res, next) => {
     db.tasks.remove({_id: mongojs.ObjectId(req.params.id)}, (err, result) => {
         if (err) return next(err);
         res.json(result);
@@ -46,7 +45,7 @@ router.delete('/task/:id', (req, res, next) => {
 });
 
 //metode de actualitzar
-router.put('/task/:id', (req, res, next) => {
+router.put('/tasks/:id', (req, res, next) => {
     const task = req.body;
     const updateTask = {};
 

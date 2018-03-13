@@ -4,10 +4,10 @@
   <div class="card-body">
     <form (submit)= "addTask($event)">
       <div class="input-group">
-        <input type="text" name="title" [(ngModel)]="title" placeholder="Add Task" class="form-cotrol">
+        <input type="text" name="title" [(ngModel)]="title" placeholder="Afegir tarea" class="form-cotrol">
         <span class="input-group-addon">
           <button type="submit" class=" btn btn-primary">
-            Add Task
+            Crear
           </button>
         </span>
       </div>
@@ -20,9 +20,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Status</th>
-      <th>Title</th>
-      <th>Manage</th>
+      <th>Estat de la tarea</th>
+      <th>Nom</th>
+      <th>Gestionar</th>
 
     </tr>
   </thead>
@@ -32,10 +32,10 @@
         <input type="checkbox">
       </td>
       <td>
-        {{task.title}}}
+        {{task.title}}
       </td>
       <td>
-        <button class="btn btn-danger" (click)="deleteTask(task._id)" )>
+        <button class="btn btn-danger" (click)="deleteTask(task._id)" >
           <i class="fa fa-trash"></i>
         </button>
       </td>

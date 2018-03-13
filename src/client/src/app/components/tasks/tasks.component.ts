@@ -45,7 +45,7 @@ export class TasksComponent implements OnInit {
     const response = confirm('estas segur?')
 
     if (response) {
-      //console.log(id);
+      console.log(id);
       const tasks = this.tasks; //arreglo
       this.taskService.deleteTask(id)
         .subscribe(data => {
