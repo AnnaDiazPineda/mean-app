@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.9",
+    "bootstrap": "^4.0.0-beta.3",
     "cors": "^2.8.4",
     "ejs": "^2.5.7",
     "express": "^4.16.2",

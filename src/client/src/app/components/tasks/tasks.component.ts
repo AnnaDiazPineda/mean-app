@@ -13,19 +13,21 @@ export class TasksComponent implements OnInit {
   tasks: Task[];
   title: string;
 
+  //el constructor es el primer metode que se executa quan la aplicacio es genera
   constructor(private taskService: TasksService) {
     this.taskService.getTasks()
       .subscribe(tasks => {
         this.tasks = tasks
-        //console.log(tasks);
+        console.log(tasks);
       })
   }
 
+  ////////////***metodes que utilitzo en html*******/////
   ngOnInit() {
   }
   addTask(event){
-    event.PreventDefault(); //cancela evento de refrescar quan envia formularo
-    //console.log(this.title)
+    event.preventDefault(); //cancela evento de refrescar quan envia formularo
+    console.log(this.title)
     const newTask: Task = {
       title: this.title,
       isDone: false
