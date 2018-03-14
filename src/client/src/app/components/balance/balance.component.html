@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="header">
+    <h1 class="title">Perfil de usuario</h1>
+  </div>
+
+  <div class="form-group">
+    <label >Usuario</label>
+    <input type="text" class="form-control" id="username" name="username" value="" required="" title="Introduzca el usuario que quiere buscar" placeholder="juancarlos" #username >
+    <span class="help-block"></span>
+    <button type="submit" class="btn btn-success btn-block" id="userInfo" (click)="getInfo(username.value)">Buscar</button>
+  </div>
+
+
+  <div class="col-md-7 nameEdit">
+    <div id="text">
+      <h2>Nombre: {{ this.userIt.username }}</h2>
+      <h2>Wallet:  {{ this.userIt.wallet }}</h2>
+    </div>
+  </div>
+
+</div>

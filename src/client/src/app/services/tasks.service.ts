@@ -39,5 +39,14 @@ export class TasksService {
     }
 
 
+    /////////////////////// balance i tal
+
+  getUserInfo(name: String){
+    //info del usu
+    return this.http.get<Task[]>(`${this.domain}/api/select/`+name)
+      .map(res => res);
+  }
+
+
 
 }

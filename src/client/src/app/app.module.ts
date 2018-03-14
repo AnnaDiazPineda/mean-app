@@ -5,12 +5,14 @@ import {TasksService} from './services/tasks.service';
 import {FormsModule} from '@angular/forms'; //per ngmodule del html
 import { AppComponent } from './app.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { BalanceComponent } from './balance/balance.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TasksComponent
+    TasksComponent,
+    BalanceComponent
 
   ],
   imports: [
